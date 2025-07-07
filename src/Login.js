@@ -48,7 +48,7 @@ export default function Login() {
         var password = data.get("password");
         var profile = data.get("profile");
 
-        axios.post("http://localhost:1000/addnewuser", {
+        axios.post("https://backendfriendsbook.onrender.com/addnewuser", {
             Name: name,
             Contact: contact,
             Email: email,
@@ -67,7 +67,7 @@ export default function Login() {
         var email2 = data.get("email2");
         var password2 = data.get("password2");
 
-        axios.post("http://localhost:1000/login", {
+        axios.post("https://backendfriendsbook.onrender.com/login", {
             Email: email2,
             Password: password2,
         }).then((succ) => {
@@ -85,7 +85,7 @@ export default function Login() {
     function checkuser() {
         var id = localStorage.getItem("userlogin");
         if (id) {
-            axios.post("http://localhost:1000/logincheck", { Id: id }).then((succ) => {
+            axios.post("https://backendfriendsbook.onrender.com/logincheck", { Id: id }).then((succ) => {
                 // console.log(succ.data);
                 if (succ.data) {
                     navi("/Home");

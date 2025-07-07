@@ -15,7 +15,7 @@ export default function Suggestions() {
 
     function fetchotherusers() {
         if (id) {
-            axios.post("http://localhost:1000/fetchotherusers").then((succ) => {
+            axios.post("https://backendfriendsbook.onrender.com/fetchotherusers").then((succ) => {
                 console.log(succ.data);
                 var aaa = succ.data.filter((row) => {
                     if (row._id != id) {

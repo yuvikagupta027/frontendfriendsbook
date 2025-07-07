@@ -10,7 +10,7 @@ export default function Profile2() {
 
     function fetchusername() {
         if (id) {
-            axios.post("http://localhost:1000/fetchuserprofile", {
+            axios.post("https://backendfriendsbook.onrender.com/fetchuserprofile", {
                 Id :id 
             }).then((succ) => {
                 // console.log(succ.data);

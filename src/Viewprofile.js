@@ -23,7 +23,7 @@ export default function Viewprofile() {
     var ids = new URLSearchParams(useLocation().search).get("id");
 
     function fetchuser() {
-        axios.post("http://localhost:1000/fetchuserprofile", {
+        axios.post("https://backendfriendsbook.onrender.com/fetchuserprofile", {
             Id: ids
         }).then((succ) => {
             // console.log(succ.data);
@@ -44,7 +44,7 @@ export default function Viewprofile() {
 
     function sendfriendrequest(friendId) {
         if (id) {
-            axios.post("http://localhost:1000/send-request", {
+            axios.post("https://backendfriendsbook.onrender.com/send-request", {
                 senderId: id,
                 receiverId: friendId
             }).then((succ) => {
@@ -58,7 +58,7 @@ export default function Viewprofile() {
 
     function checkfriendrequest() {
         if (ids && id) {
-            axios.post("http://localhost:1000/checkusersrequest", {
+            axios.post("https://backendfriendsbook.onrender.com/checkusersrequest", {
                 senderId: id,
                 receiverId: ids,
             }).then((succ) => {
@@ -89,7 +89,7 @@ export default function Viewprofile() {
 
     function cancelfriendrequest(x) {
         if (id) {
-            axios.post("http://localhost:1000/cancelfriendrequest", {
+            axios.post("https://backendfriendsbook.onrender.com/cancelfriendrequest", {
                 Id: x,
             }).then((succ) => {
                 if (succ.data == "okk") {
@@ -102,7 +102,7 @@ export default function Viewprofile() {
 
     function acceptfriendrequest(x) {
         // console.log(x);
-        axios.post("http://localhost:1000/acceptfriendrequest", {
+        axios.post("https://backendfriendsbook.onrender.com/acceptfriendrequest", {
             Id: x,
         }).then((succ) => {
             if (succ.data == "okk") {
@@ -119,7 +119,7 @@ export default function Viewprofile() {
     function fetchpic() {
         if (ids) {
             console.log(ids);
-            axios.post("http://localhost:1000/fetchpic", {
+            axios.post("https://backendfriendsbook.onrender.com/fetchpic", {
                 Id: ids
             }).then((succ) => {
                 setpic(succ.data[0]);
@@ -135,7 +135,7 @@ export default function Viewprofile() {
     const [posts, setposts] = useState([])
 
     function fetchfriendspost() {
-        axios.post("http://localhost:1000/fetchfriendspost", {
+        axios.post("https://backendfriendsbook.onrender.com/fetchfriendspost", {
             Id: ids
         }).then((succ) => {
             // console.log(succ.data);

@@ -30,7 +30,7 @@ export default function Sidebar() {
         var caption = data.get("caption");
         var id = localStorage.getItem("userlogin")
 
-        axios.post("http://localhost:1000/submitposts", {
+        axios.post("https://backendfriendsbook.onrender.com/submitposts", {
             Name: name,
             Url: url,
             Caption: caption,
@@ -64,7 +64,7 @@ export default function Sidebar() {
         // console.log(searchvalue);
 
         if (searchvalue.length > 2) {
-            axios.get(`http://localhost:1000/searchvalue?Name=${searchvalue}`
+            axios.get(`https://backendfriendsbook.onrender.com/searchvalue?Name=${searchvalue}`
             ).then((Succc) => {
                 console.log(Succc);
                 setusers(Succc.data);

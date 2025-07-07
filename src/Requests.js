@@ -8,7 +8,7 @@ export default function Requests() {
     const [frnd, setfrnd] = useState([]);
 
     function deletee(x) {
-        axios.post("http://localhost:1000/deleterequest", {
+        axios.post("https://backendfriendsbook.onrender.com/deleterequest", {
             Id: x
         }).then((succ) => {
             alert("request deleted");

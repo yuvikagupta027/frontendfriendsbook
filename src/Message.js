@@ -12,7 +12,7 @@ export default function Message() {
 
     var { id } = useParams();
 
-    var uri = "http://localhost:1000";
+    var uri = "https://backendfriendsbook.onrender.com";
 
     // console.log(id);
 

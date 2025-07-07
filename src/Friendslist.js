@@ -18,7 +18,7 @@ export default function Friendslist() {
 
     function fetchfriendlist() {
         if (id) {
-            axios.post("http://localhost:1000/fetchfriendlist", {
+            axios.post("https://backendfriendsbook.onrender.com/fetchfriendlist", {
                 Id: id
             }).then((succ) => {
                 setfriendlist(succ.data);
@@ -37,7 +37,7 @@ export default function Friendslist() {
     function fetchpostsfriends() {
 
         if (friendid) {
-            axios.post("http://localhost:1000/fetchfriendspost", {
+            axios.post("https://backendfriendsbook.onrender.com/fetchfriendspost", {
                 Id: myfriendid
             }).then((succ) => {
                 // console.log(succ.data);
@@ -53,7 +53,7 @@ export default function Friendslist() {
     function view(userId) {
         setmyfriendid(userId);
         setfriendid(userId);
-        axios.post("http://localhost:1000/viewprofile", {
+        axios.post("https://backendfriendsbook.onrender.com/viewprofile", {
             Id: userId
         }).then((succ) => {
             // console.log(succ.data);
@@ -64,7 +64,7 @@ export default function Friendslist() {
     }
 
     function deleteee(friendId) {
-        axios.post("http://localhost:1000/deletefriend", {
+        axios.post("https://backendfriendsbook.onrender.com/deletefriend", {
             Id: friendId
         }).then((response) => {
             if (response.data === "okk") {
@@ -78,7 +78,7 @@ export default function Friendslist() {
 
     function fetchpic() {
         if (myfriendid) {
-            axios.post("http://localhost:1000/fetchpic", {
+            axios.post("https://backendfriendsbook.onrender.com/fetchpic", {
                 Id: myfriendid
             }).then((succ) => {
                 setpic(succ.data[0]);

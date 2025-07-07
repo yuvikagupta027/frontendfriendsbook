@@ -19,7 +19,7 @@ export default function Profile() {
     function fetchposts() {
 
         if (userId) {
-            axios.post("http://localhost:1000/fetchposts", {
+            axios.post("https://backendfriendsbook.onrender.com/fetchposts", {
                 Id: userId
             }).then((succ) => {
                 setposts(succ.data);
@@ -34,7 +34,7 @@ export default function Profile() {
 
     function deletee(x) {
         // alert(x);
-        axios.post("http://localhost:1000/deleteposts", {
+        axios.post("https://backendfriendsbook.onrender.com/deleteposts", {
             Id: x
         }).then((succ) => {
             fetchposts();
@@ -44,7 +44,7 @@ export default function Profile() {
 
     function fetchusername() {
         if (userId) {
-            axios.post("http://localhost:1000/fetchuserprofile", {
+            axios.post("https://backendfriendsbook.onrender.com/fetchuserprofile", {
                 Id: userId
             }).then((succ) => {
                 setusername(succ.data);
@@ -62,7 +62,7 @@ export default function Profile() {
     //     var data = new FormData(e.currentTarget);
     //     var Url = data.get("Url");
 
-    //     axios.post("http://localhost:1000/submitprofilepic", {
+    //     axios.post("https://backendfriendsbook.onrender.com/submitprofilepic", {
     //         Id: userId,
     //         Url: Url,
     //         Datetime: new Date(),
@@ -79,7 +79,7 @@ export default function Profile() {
 
     function fetchpic() {
         if (userId) {
-            axios.post("http://localhost:1000/fetchpic", {
+            axios.post("https://backendfriendsbook.onrender.com/fetchpic", {
                 Id: userId
             }).then((succ) => {
                 setpic(succ.data[0]);

@@ -15,7 +15,7 @@ export default function Viewprofile2() {
     var ids = new URLSearchParams(useLocation().search).get("id");
 
     function fetchuser() {
-        axios.post("http://localhost:1000/fetchuserprofile", {
+        axios.post("https://backendfriendsbook.onrender.com/fetchuserprofile", {
             Id: ids
         }).then((succ) => {
             console.log(succ.data);
@@ -34,7 +34,7 @@ export default function Viewprofile2() {
 
     function sendfriendrequest(friendId) {
         if (id) {
-            axios.post("http://localhost:1000/send-request", {
+            axios.post("https://backendfriendsbook.onrender.com/send-request", {
                 senderId: id,
                 receiverId: friendId
             }).then((succ) => {
@@ -52,7 +52,7 @@ export default function Viewprofile2() {
 
     function checkfriendrequest() {
         if (ids && id) {
-            axios.post("http://localhost:1000/checkusersrequest", {
+            axios.post("https://backendfriendsbook.onrender.com/checkusersrequest", {
                 senderId: id,
                 receiverId: ids
             }).then((succ) => {
@@ -78,7 +78,7 @@ export default function Viewprofile2() {
 
     function cancelfriendrequest(x) {
         if(id) {
-            axios.post("http://localhost:1000/cancelfriendrequest", {
+            axios.post("https://backendfriendsbook.onrender.com/cancelfriendrequest", {
                 Id: x,
             }).then((succ) => {
                 if (succ.data == "okk") {
